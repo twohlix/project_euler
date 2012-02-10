@@ -1,5 +1,5 @@
 #euler problem 7 
-#largest prime factor
+#prime number by its number (100th prime 101st prime etc..)
 
 import sys
 
