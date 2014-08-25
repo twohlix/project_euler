@@ -13,6 +13,7 @@ def isPalindrome( x ):
 			return False	
 	return True
 
+
 theNumber = int(sys.argv[1]);
 
 maxN = 10
@@ -49,6 +50,27 @@ def bruteCheck(minN, maxN):
 	print "Brute:", count
 	print max(candidates)
 
+
+def palindromify( num ):
+	num_str = str(num)
+	pally = num_str + num_str[::-1]
+	return int(pally)
+
+def stringCheck(minN, maxN):
+	count = 0
+	for pally in range(maxN, minN, -1):
+		palindrome_candidate = palindromify(pally)
+		for i in range(maxN, minN, -1):
+			count += 1
+			if palindrome_candidate % i == 0 :
+				factor = palindrome_candidate / i
+				if factor < maxN and factor > minN :
+					print "String:", count
+					print palindrome_candidate
+					return
+
+
+stringCheck(minN, maxN)
 optimizedCheck(minN, maxN)
 bruteCheck(minN, maxN)
 
