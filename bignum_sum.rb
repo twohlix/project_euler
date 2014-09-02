@@ -10,6 +10,7 @@ def usage
   "#{$0} file-of-big-nums"
 end
 
+check_args
 file_path = ARGV[0]
 nums = []
 IO.foreach(file_path) do |line|
