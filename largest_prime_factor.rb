@@ -13,17 +13,17 @@ end
 
 def largest_prime_factor(number)
   top_factor_possible = number / 2 
-  i = top_factor_possible
+  i = 2
   @count = 0
-  while i > 0
+  while i < top_factor_possible
     @count += 1
     if number % i == 0
-      if Prime.prime?(i)
-        return i
+      if Prime.prime?(number/i)
+        return number/i
       end
     end
 
-    i -= 1
+    i += 1
   end
 
   nil
